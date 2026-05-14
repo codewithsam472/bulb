@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <meta name="viewport" content=""width=device-width,initial-scale=1.0">
+        <title>My Room</title>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+            body{
+                background-color:oklab(14.479000000000001% 0 -0.00002 / 0.908);
+                width: 100vw;
+                height: 100vh;
+                display: grid;
+                place-content: center;
+            }
+            div{
+                background-color:black;
+                width:350px;
+                text-align: center;
+                
+            }
+            img{
+                width: 100%;
+            }    
+            button {
+                width:80%;
+                height: 40px;
+                font-size: 20px;
+                margin:5px;
+            } 
+        </style>
+    </head>
+    
+    <body>
+        <div>
+            <img src="cboff.img.jpeg"alt="" id="bulb">
+            <br>
+            <button onclick="change()" id="btn">Turn On</button>
+            
+        </div>
+
+
+
+
+
+        <script>
+            let bulb = document.getElementById('bulb');
+            let btn = document.getElementById('btn');
+            let light =false;
+            const audio = new Audio('dragon-studio-light-switch-382712 (5).mp3');
+            function change(){
+                audio.play();
+                if(light==false) {
+                    bulb.setAttribute("src", "cbon.img.jpeg");
+                    light = true;
+                    btn.innerHTML = "Turn Off";
+                }
+                else {
+                    bulb.setAttribute("src", "cboff.img.jpeg");
+                    light = false;
+                    btn.innerHTML="Turn On";
+
+                }
+            }
+
+            
+        </script>
+    </body>
+</html>
